@@ -90,8 +90,3 @@ jobs:
           path: nuget.package/runtimes/
       - name: Create package
         run: ./nuget.exe Pack nuget.package/NativeBinaries.nuspec -Version ${{ steps.minver.outputs.version }} -NoPackageAnalysis 
-      - name: Upload NuGet package
-        uses: actions/upload-artifact@v2.2.2
-        with:
-          name: NuGet package
-          path: ./*.nupkg
